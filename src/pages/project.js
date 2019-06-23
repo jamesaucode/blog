@@ -62,7 +62,7 @@ export default class Project extends Component {
                 dolorum? Soluta illum illo impedit laudantium facere est
                 mollitia magni sint nostrum sapiente!
               </Paragraph>
-              <IconBox style={{ "margin-top": "auto" }}>
+              <IconBox style={{ "marginTop": "auto" }}>
                 <Livesite
                   height={"24px"}
                   width={"24px"}
@@ -89,7 +89,7 @@ export default class Project extends Component {
                 dolorum? Soluta illum illo impedit laudantium facere est
                 mollitia magni sint nostrum sapiente!
               </Paragraph>
-              <IconBox style={{ "margin-top": "auto" }}>
+              <IconBox style={{ "marginTop": "auto" }}>
                 <Livesite
                   height={"24px"}
                   width={"24px"}

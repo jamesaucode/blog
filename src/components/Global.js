@@ -5,11 +5,10 @@ import Header from "./Header"
 import Helmet from "react-helmet"
 import Footer from "./Footer"
 import useSiteMetadata from '../hooks/use-sitemetadata';
-import { graphql } from "gatsby";
 
 const Main = styled.main`
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 120px;
   min-height: calc(100vh - 100px);
 `
 const Layout = ({ children }) => {
@@ -47,7 +46,7 @@ const Layout = ({ children }) => {
     <Header />
     <Main>
       {children}
-      <Footer iconSize={"20px"} />
+      <Footer iconSize={"16px"} />
     </Main>
   </React.Fragment>
 )

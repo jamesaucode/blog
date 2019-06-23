@@ -4,7 +4,6 @@ import Global from "../components/Global"
 import Intro from "../components/Intro"
 import SocialBar from "../components/SocialBar"
 import Button from "../components/Button"
-import Footer from "../components/Footer";
 
 const Wrapper = styled.div`
   display: flex;

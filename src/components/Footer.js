@@ -7,8 +7,10 @@ import React from "react"
 
 const Wrapper = styled.footer`
   display: flex;
-  justify-content: center;
-  height: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 120px;
   position: absolute;
   background: #6c00d8;
   right: 0;
@@ -20,9 +22,8 @@ const Paragraph = styled.section`
   display: flex;
   align-items: center;
   font-size: 0.9em;
-  line-height: 1.6;
+  line-height: 1.5;
   color: rgba(247, 255, 255, 0.8);
-  vertical-align: middle;
 `
 const Anchor = styled.a`
   padding: 1rem;
@@ -30,6 +31,9 @@ const Anchor = styled.a`
 
 const Footer = ({ iconSize }) => (
     <Wrapper>
+      <Paragraph>
+        @2019 James Au
+      </Paragraph>
       <Paragraph>
         Built with
         <Anchor href="https://www.gatsbyjs.org/" target="_blank">

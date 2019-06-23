@@ -3,7 +3,9 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   pathPrefix: "/gatsby-test",
   siteMetadata: {
@@ -14,6 +16,14 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-emotion",
+     {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `uupo32e1prlh`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.API_KEY,
+      },
+    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

@@ -9,6 +9,10 @@ const Wrapper = styled.ul`
   max-width: 1200px;
   margin: 2rem auto;
 `
+// const githubColor = "#181717";
+// const linkedinColor = "#0077B5";
+// const twitterColor = "#1DA1F2";
+
 const ListItem = styled.li`
   padding: 0.5rem;
   height: 48px;
@@ -20,19 +24,20 @@ const ListItem = styled.li`
     cursor: pointer;
   }
 `
+
 const SocialBar = () => (
   <Wrapper>
-    <a href="https://github.com/jamesaucode" target="_blank">
+    <a href="https://github.com/jamesaucode" target="_blank" rel="noopener noreferrer">
       <ListItem>
         <Github fill={"rgba(247,255,255,0.9)"} />
       </ListItem>
     </a>
-    <a href="https://www.linkedin.com/in/jamesaucb/" target="_blank">
+    <a href="https://www.linkedin.com/in/jamesaucb/" target="_blank" rel="noopener noreferrer">
       <ListItem>
         <Linkedin fill={"rgba(247,255,255,0.9)"} />
       </ListItem>
     </a>
-    <a href="https://twitter.com/JamesAuCode" target="_blank">
+    <a href="https://twitter.com/JamesAuCode" target="_blank" rel="noopener noreferrer">
       <ListItem>
         <Twitter fill={"rgba(247,255,255,0.9)"} />
       </ListItem>
