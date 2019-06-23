@@ -7,6 +7,7 @@ import Github from "../../static/assets/github.svg"
 const TextBox = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
   margin-left: 2rem;
 `
 
