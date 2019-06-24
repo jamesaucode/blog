@@ -1,53 +1,66 @@
-import React from "react"
-import styled from "@emotion/styled"
-import { Link } from 'gatsby';
+import React from "react";
+import styled from "@emotion/styled";
+import { Link } from "gatsby";
 
 const NavList = styled.ul`
   display: flex;
   justify-content: flex-end;
-`
+`;
 const NavLink = styled.li`
-  color: rgb(207,249,248);
-  font-size: .8em;
+  color: rgb(207, 249, 248);
+  font-size: 0.7em;
   font-weight: 400;
   padding: 0.5em 1em;
   transition: 0.5s ease-out color;
   text-transform: uppercase;
   &:hover {
-      color: white;
-      cursor: pointer;
+    color: white;
+    cursor: pointer;
   }
-`
+`;
 const Wrapper = styled.header`
-    padding: 2rem 1rem;
-    height: 100px;
-`
+  padding: 2rem 1rem;
+  height: 100px;
+  width: 100%;
+  font-size: calc(0.3vw + 16px);
+`;
 const Nav = styled.nav`
-    max-width: 1400px;
-    margin: 0 auto;
-`
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: space-between;
+  color: white;
+  font-weight: 900;
+`;
+const Heading = styled.h1`
+  font-size: 1.25em;
+  font-weight: 700;
+`;
 
 const Header = () => {
   return (
     <Wrapper>
       <Nav>
+        <Link to="/">
+          <Heading>James Au</Heading>
+        </Link>
         <NavList>
-          <Link to="/">
-            <NavLink>Home</NavLink>
-          </Link>
-          <Link to="/project">
-            <NavLink>Project</NavLink>
-          </Link>
-          <Link to="/blog">
-            <NavLink>Blog</NavLink>
-          </Link>
-          <Link to="/contact">
-            <NavLink>Contact</NavLink>
-          </Link>
+          <NavLink>
+            <Link to="/">Home</Link>
+          </NavLink>
+          <NavLink>
+            <Link to="/project">Project</Link>
+          </NavLink>
+          <NavLink>
+            <Link to="/blog">Blog</Link>
+          </NavLink>
+          <NavLink>
+            <Link to="/about">About</Link>
+          </NavLink>
         </NavList>
       </Nav>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

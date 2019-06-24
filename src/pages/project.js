@@ -13,10 +13,8 @@ const TextBox = styled.div`
 
 const Title = styled.h2`
   color: rgb(247, 255, 255);
-  font-family: "Fira Sans";
-  letter-spacing: 1.2px;
   font-size: 2em;
-  font-weight: 900;
+  font-weight: 700;
   margin-bottom: 1rem;
 `
 const Wrapper = styled.div`

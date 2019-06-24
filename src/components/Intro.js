@@ -7,6 +7,7 @@ const IntroWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   justify-content: center;
+  font-size: calc(0.3vw + 16px);
 `
 
 const TextWrapper = styled.div`
@@ -17,15 +18,13 @@ const TextWrapper = styled.div`
 
 const Title = styled.h2`
   color: rgb(247, 255, 255);
-  font-family: "Fira Sans";
-  letter-spacing: 1.2px;
   margin: 1rem 0;
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 900;
 `
 
 const Paragraph = styled.p`
-  font-size: 1.1em;
+  font-size: 0.95em;
   line-height: 1.75;
   color: rgba(247, 255, 255, 0.8);
 `
@@ -41,8 +40,8 @@ const Divider = styled.div`
   margin: 0 auto;
 `
 const Image = styled.img`
-  width: 16em;
-  height: 16em;
+  width: 13em;
+  height: 13em;
   margin: 0 auto;
   border-radius: 50%;
   transition: 0.5s ease-out all;

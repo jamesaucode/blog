@@ -16,7 +16,7 @@ const Index = () => {
     <Global>
       <Wrapper>
         <Intro />
-        <SocialBar />
+        {/* <SocialBar /> */}
         <Button />
       </Wrapper>
     </Global>

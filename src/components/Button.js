@@ -11,6 +11,7 @@ const Btn = styled.button`
   border: solid 2px rgba(247, 255, 255, 0.9);
   border-radius: 3px;
   transition: 0.5s ease-out all;
+  margin-top: 2rem;
   &:hover {
     cursor: pointer;
     background: rgba(247, 255, 255, 0.8);

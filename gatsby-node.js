@@ -27,6 +27,9 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(result => {
+    if (result.errors) {
+      reject(result.errors)
+    }
     result.data.allContentfulBlog.edges.forEach(({ node }) => {
       createPage({
         path: `/blog/${node.fields.slug}`,

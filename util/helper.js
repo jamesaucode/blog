@@ -11,3 +11,7 @@ export const countTags = blogEntries => {
   });
   return tags;
 };
+
+export const getSnippet = blogContent => {
+  return `${blogContent.slice(0, Math.min(blogContent.length, 350))} ...`;
+};

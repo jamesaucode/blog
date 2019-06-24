@@ -5,9 +5,9 @@
  */
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 module.exports = {
-  pathPrefix: "/gatsby-test",
+  pathPrefix: "/blog",
   siteMetadata: {
     title: "James Au | Web Developer",
     description:
@@ -15,13 +15,29 @@ module.exports = {
     author: "James Au",
   },
   plugins: [
+    "gatsby-plugin-twitter",
     "gatsby-plugin-emotion",
-     {
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `uupo32e1prlh`,
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.API_KEY,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [],
       },
     },
     {
@@ -37,7 +53,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `James Au's Portfolio`,
-        short_name: `James Au's Portfolio`,
+        short_name: `Portfolio`,
         start_url: `/`,
         background_color: `#6c00d8`,
         theme_color: `#6c00d8`,
@@ -47,6 +63,6 @@ module.exports = {
         // icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    "gatsby-plugin-offline"
+    "gatsby-plugin-offline",
   ],
-}
+};

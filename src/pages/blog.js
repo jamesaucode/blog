@@ -2,80 +2,64 @@ import React, { useState } from "react";
 import Global from "../components/Global";
 import styled from "@emotion/styled";
 import getContentfulBlog from "../hooks/get-contentfulBlog";
-import { Link } from "gatsby";
+import BlogItem from '../components/BlogItem';
 import { countTags } from '../../util/helper';
 
 const Wrapper = styled.div`
   display: grid;
-  max-width: 700px;
+  max-width: 1200px;
   grid-template-areas: "sidebar post";
-  grid-template-columns: 150px auto;
+  grid-template-columns: 200px auto;
   grid-gap: 4rem;
   margin: 0 auto;
+  font-size: calc(0.35vw + 15px);
+  @media (max-width: 600px) {
+    grid-template-areas: 
+    "post" 
+    "sidebar";
+    grid-template-columns: auto;
+    grid-gap: 0;
+  }
 `;
 const BlogItemsWrapper = styled.div`
-  max-width: 600px;
+grid-area: post;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
 `;
-const TextBox = styled.div`
-  grid-area: post;
-  width: 100%;
-  max-height: 250px;
-  background: transparent;
-  padding: 0 1rem;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-const Heading = styled.h2`
-  font-size: 1.75em;
-  font-weight: 600;
-  padding-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-`;
-const Preview = styled.p`
-  font-size: 1em;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
-  max-height: 75px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-`;
-const Divider = styled.div`
-  border-bottom: 1px solid rgb(151, 73, 229);
-  width: 80%;
-  margin: 2rem auto;
-`;
 const SideBar = styled.div`
+grid-area: sidebar;
   height: 100%;
-`;
-const Date = styled.p`
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.8em;
 `;
 const SideBarList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  max-width: 400px;
+  padding: 1rem;
+  margin: 0 auto;
+  @media (max-width: 600px) {
+  }
 `;
 const Tag = styled.li`
   color: rgba(255, 255, 255, 0.8);
   font-weight: 600;
-  margin: 1rem 0;
+  padding: 0.25rem 0;
+  margin: 0.75rem 0;
   &:hover {
     cursor: pointer;
   }
+  transition: 0.5s ease-out border-bottom;
+  border-bottom: 3px solid ${props => props.active ? "#b0ff92" : "transparent"};
 `;
-const DEFAULT_TAG = "100daysofcode";
+// const DEFAULT_TAG = "100daysofcode";
+
 const Blog = () => {
   const blogEntries = getContentfulBlog();
-  const [currentTag, setCurrentTag] = useState(DEFAULT_TAG);
+  const [currentTag, setCurrentTag] = useState("");
   const tags = countTags(blogEntries);
-  const handleClickTag = tag => {
-    setCurrentTag(tag);
-  };
+  const handleClickTag = tag => { setCurrentTag(tag); };
   return (
     <Global>
       <Wrapper>
@@ -88,6 +72,7 @@ const Blog = () => {
                 <Tag
                   title={`#${tagName}`}
                   onClick={() => handleClickTag(tagName)}
+                  active={currentTag === tagName}
                 >
                   {`#${tagName} (${tagOccurences})`}
                 </Tag>
@@ -97,30 +82,17 @@ const Blog = () => {
         </SideBar>
         <BlogItemsWrapper>
           {blogEntries.map(
-            ({
-              node: {
-                id,
-                title,
-                path,
-                date,
-                tag,
-                content: { content: blogContent },
-              },
-            }) => {
-              if (tag === currentTag) {
+            ({ node }) => {
+              if (!currentTag) {
                 return (
-                  <React.Fragment key={id}>
-                    <Link to={`/blog/${path}`}>
-                      <TextBox>
-                        <Date>{date}</Date>
-                        <Heading>{title}</Heading>
-                        <Preview>{blogContent}</Preview>
-                      </TextBox>
-                    </Link>
-                    <Divider />
-                  </React.Fragment>
+                  <BlogItem {...node} />
+                )
+              } else if (node.tag === currentTag) {
+                return (
+                <BlogItem {...node} />
                 );
               }
+              return null;
             }
           )}
         </BlogItemsWrapper>
