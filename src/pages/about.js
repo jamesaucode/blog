@@ -11,7 +11,13 @@ const Wrapper = styled.div`
     font-size: calc(0.3vw + 16px);
     grid-template-areas: 
     "text social";
-    grid-template-columns: auto 300px;
+    grid-template-columns: auto 250px;
+    @media (max-width: 600px) {
+      grid-template-areas:
+      "text" 
+      "social";
+      grid-template-columns:auto;
+    }
 `
 const Heading = styled.h1`
   color: rgba(255, 255, 255, 0.9);
@@ -33,6 +39,7 @@ const CTA = styled.p`
 `;
 const TextBox = styled.div`
 height: 100%;
+padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,6 +68,10 @@ const SocialButton = styled.a`
 const SocialText = styled.span`
   padding: 0 0.5rem;
 `
+const StyledLink = styled.a`
+  font-weight: 700;
+  border-bottom: 3px solid #b0ff92;
+`;
 export default class Contact extends Component {
   render() {
     return (
@@ -75,10 +86,23 @@ export default class Contact extends Component {
               particularly interested in web development, both frontend and
               backend.
             </Paragraph>
-            <Paragraph></Paragraph>
+            <Paragraph>
+              I am a supporter of
+              <StyledLink
+                title="Learn more about 100DaysOfCode"
+                href="https://www.100daysofcode.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                &nbsp;#100DaysOfCode&nbsp;
+              </StyledLink>
+              on Twitter. Check it out if you some extra motivation in learning
+              how to code!
+            </Paragraph>
+            <Paragraph>You can find me on any of the social link on the side.</Paragraph>
           </TextBox>
           <SocialBox>
-            <CTA>Find me on social media!</CTA>
+            <CTA>Find me here!</CTA>
             <a
               href="https://twitter.com/JamesAuCode?ref_src=twsrc%5Etfw"
               className="twitter-follow-button"

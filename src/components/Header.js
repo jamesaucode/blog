@@ -20,9 +20,12 @@ const NavLink = styled.li`
 `;
 const Wrapper = styled.header`
   padding: 2rem 1rem;
-  height: 100px;
+  height: 75px;
   width: 100%;
   font-size: calc(0.3vw + 16px);
+  @media (max-width: 450px) {
+    padding: 0.5rem;
+  }
 `;
 const Nav = styled.nav`
   display: flex;
@@ -31,6 +34,11 @@ const Nav = styled.nav`
   justify-content: space-between;
   color: white;
   font-weight: 900;
+
+  @media (max-width: 450px) {
+    flex-direction: column; 
+    align-items: center;
+  }
 `;
 const Heading = styled.h1`
   font-size: 1.25em;

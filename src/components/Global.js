@@ -9,7 +9,7 @@ import useSiteMetadata from "../hooks/use-sitemetadata";
 const Main = styled.main`
   position: relative;
   padding-bottom: 120px;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 75px);
 `;
 const Layout = ({ children }) => {
   const siteMetadata = useSiteMetadata();
