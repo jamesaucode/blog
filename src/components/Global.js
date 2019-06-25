@@ -42,6 +42,7 @@ const Layout = ({ children }) => {
       <Helmet>
         <html lang="en" />
         <title>{siteMetadata.title}</title>
+        <link href="https://fonts.googleapis.com/css?family=Aguafina+Script&display=swap&text=JamesAu" rel="stylesheet"/> 
         <link
           rel="stylesheet"
           // rel="preload"

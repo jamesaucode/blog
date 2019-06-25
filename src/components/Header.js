@@ -32,6 +32,7 @@ const Nav = styled.nav`
   max-width: 1400px;
   margin: 0 auto;
   justify-content: space-between;
+  align-items: center;
   color: white;
   font-weight: 900;
 
@@ -41,8 +42,10 @@ const Nav = styled.nav`
   }
 `;
 const Heading = styled.h1`
-  font-size: 1.25em;
-  font-weight: 700;
+  font-size: 1.5em;
+  font-weight: 400;
+  font-family: 'Aguafina Script', cursive;
+  white-space: nowrap;
 `;
 
 const Header = () => {

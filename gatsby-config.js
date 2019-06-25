@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+const path = require('path');
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -17,6 +18,15 @@ module.exports = {
   plugins: [
     "gatsby-plugin-twitter",
     "gatsby-plugin-emotion",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`
+      },
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: `gatsby-source-contentful`,
       options: {
